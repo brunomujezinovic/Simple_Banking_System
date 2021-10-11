@@ -291,7 +291,7 @@ files:
         }
     }
   learner_created: false
-- name: src/banking/Bank.java
+- name: src/banking/SqlDB.java
   visible: true
   text: |
     package banking;

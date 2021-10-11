@@ -490,16 +490,6 @@ files:
         }
     }
   learner_created: false
-- name: src/banking/Bank.java
-  visible: true
-  text: |
-    package banking;
-
-    public class Bank {
-
-
-    }
-  learner_created: true
 - name: src/banking/Account.java
   visible: true
   text: |
@@ -567,6 +557,16 @@ files:
 
             return checkDigit;
         }
+
+    }
+  learner_created: true
+- name: src/banking/SqlDB.java
+  visible: true
+  text: |
+    package banking;
+
+    public class Bank {
+
 
     }
   learner_created: true

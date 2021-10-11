@@ -242,7 +242,7 @@ files:
 - name: src/banking/Account.java
   visible: true
   learner_created: true
-- name: src/banking/Bank.java
+- name: src/banking/SqlDB.java
   visible: true
   learner_created: true
 feedback_link: https://hyperskill.org/projects/93/stages/515/implement#comment
