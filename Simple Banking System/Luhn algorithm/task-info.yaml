@@ -291,6 +291,65 @@ files:
         }
     }
   learner_created: false
+- name: src/banking/Bank.java
+  visible: true
+  text: |
+    package banking;
+
+    public class Bank {
+
+
+    }
+  learner_created: true
+- name: src/banking/Account.java
+  visible: true
+  text: |
+    package banking;
+
+    public class Account {
+
+        private static String cardNumber;
+        private static String pin;
+        private static int balance;
+
+        public Account() {
+            cardNumber = "400000" + String.format("%09d",
+                    (long) (Math.random() * 999999999L)) + che;
+            pin = String.format("%04d", (long) (Math.random() * 9999));
+            balance = 0;
+        }
+
+        public  String getCardNumber() {
+            return cardNumber;
+        }
+
+        public  void setCardNumber(String cardNumber) {
+            Account.cardNumber = cardNumber;
+        }
+
+        public  String getPin() {
+            return pin;
+        }
+
+        public  void setPin(String pin) {
+            Account.pin = pin;
+        }
+
+        public  int getBalance() {
+            return balance;
+        }
+
+        public  void setBalance(int balance) {
+            Account.balance = balance;
+        }
+
+
+
+    }
+  learner_created: true
 feedback_link: https://hyperskill.org/projects/93/stages/516/implement#comment
-status: Unchecked
-record: -1
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Mon, 11 Oct 2021 14:21:22 UTC
+record: 2
