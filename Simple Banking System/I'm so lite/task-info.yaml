@@ -560,16 +560,18 @@ files:
 
     }
   learner_created: true
-- name: src/banking/SqlDB.java
+- name: card.s3db
   visible: true
-  text: |
-    package banking;
-
-    public class Bank {
-
-
-    }
+  learner_created: true
+- name: tempDatabase.s3db
+  visible: true
+  learner_created: true
+- name: src/banking/DataBaseManager.java
+  visible: true
   learner_created: true
 feedback_link: https://hyperskill.org/projects/93/stages/517/implement#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Tue, 12 Oct 2021 12:24:25 UTC
 record: 3

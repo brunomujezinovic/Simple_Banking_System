@@ -1,5 +1,6 @@
 package banking;
 
+import java.sql.Connection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -9,15 +10,17 @@ public class Main {
 
     public static void main(String[] args) {
         Map<String, Account> mapAccount = new HashMap<>();
+        DataBaseManager newconnection = new DataBaseManager();
 
-
-
-
-
+        boolean dbCreated = false;
 
         String akcija = "";
 
         while (!akcija.equals("0")) {
+            if (!dbCreated) {
+                newconnection.makeConnection();
+                dbCreated = true;
+            }
             System.out.println("MENU \n" +
                     "1. Create an account\n" +
                     "2. Log into account\n" +
@@ -27,18 +30,18 @@ public class Main {
                 Account newaccount = new Account();
                 System.out.println("Your card has been created:\n" +
                         "Your card number:\n" +
-                        newaccount.getCardNumber() +"\n" +
+                        newaccount.getCardNumber() + "\n" +
                         "Your card PIN:\n" +
                         newaccount.getPin());
                 mapAccount.put(newaccount.getCardNumber(), newaccount);
-
+                newconnection.addAccount(newaccount);
 
             }
             if (akcija.equals("2")) {
                 System.out.println("Enter your card number:");
-                String cardNumber =s.next();
+                String cardNumber = s.next();
                 System.out.println("Enter your PIN:");
-                String pin= s.next();
+                String pin = s.next();
 
                 /*
 
@@ -50,8 +53,7 @@ public class Main {
                  */
 
                 Account foundAccount = mapAccount.get(cardNumber);
-                if(foundAccount != null &&
-                        foundAccount.getPin().equals(pin))  {
+                if (newconnection.isCardInDatabase(cardNumber, pin)) {
                     System.out.println("You have successfully logged in!");
 
                     // print login menu
@@ -73,14 +75,9 @@ public class Main {
                     System.out.println("Wrong card number or PIN!");
 
             }
-            if (akcija.equals("0")){
+            if (akcija.equals("0")) {
                 System.out.println("Bye!");
             }
-
-
-
-
         }
     }
-
 }

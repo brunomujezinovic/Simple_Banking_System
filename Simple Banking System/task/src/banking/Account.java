@@ -5,7 +5,7 @@ public class Account {
     private static String cardNumber;
     private static String pin;
     private static int balance;
-    String numberOfCard= "400000" + String.format("%09d",
+    String numberOfCard = "400000" + String.format("%09d",
             (long) (Math.random() * 999999999L));
 
     public Account() {
@@ -15,31 +15,31 @@ public class Account {
         balance = 0;
     }
 
-    public  String getCardNumber() {
+    public String getCardNumber() {
         return cardNumber;
     }
 
-    public  void setCardNumber(String cardNumber) {
+    public void setCardNumber(String cardNumber) {
         Account.cardNumber = cardNumber;
     }
 
-    public  String getPin() {
+    public String getPin() {
         return pin;
     }
 
-    public  void setPin(String pin) {
+    public void setPin(String pin) {
         Account.pin = pin;
     }
 
-    public  int getBalance() {
+    public int getBalance() {
         return balance;
     }
 
-    public  void setBalance(int balance) {
+    public void setBalance(int balance) {
         Account.balance = balance;
     }
 
-    private  int generateCheckDigit() {
+    private int generateCheckDigit() {
         int sum = 0;
         int remainder = (numberOfCard.length() + 1) % 2;
         for (int i = 0; i < numberOfCard.length(); i++) {
